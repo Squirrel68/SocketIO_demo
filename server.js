@@ -1,4 +1,6 @@
 const express = require("express");
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 const app = express();
 
 app.use("/static", express.static(`${__dirname}/public`));
@@ -9,7 +11,7 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
 // SERVER WEB
-const port = 3000;
+const port = process.env.PORT || 3000;
 server.listen(port, (req, res) => {
   console.log(`Server running on port ${port}`);
 });
