@@ -1,4 +1,5 @@
-var socket = io("http://localhost:3000");
+// var socket = io("http://localhost:3000"); //dev
+var socket = io("https://socket-demo-lrxc.onrender.com/"); // prod
 
 socket.on("sever-send-login-fail", function () {
   alert("Username already exist!!!");
